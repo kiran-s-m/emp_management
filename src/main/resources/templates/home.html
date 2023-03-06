@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Employee list</title>
+<style type="text/css">
+table,tr,td{
+ border: 1px solid black;
+ border-collapse: collapse;
+ padding: 5px;
+}
+</style>
+</head>
+<body>
+<div id="navbar"></div>
+
+<table>
+
+<tr>
+<td>Employee ID</td>
+<td>First name</td>
+<td>Last name</td>
+<td>Salary</td>
+<td>Department</td>
+<td>Position</td>
+<td>Email</td>
+<td>Mobile</td>
+
+</tr>
+
+<tr th:each="employee:${listAll}">
+<td th:text="${employee.id}"></td>
+<td th:text="${employee.first_name}"></td>
+<td th:text="${employee.last_name}"></td>
+<td th:text="${employee.salary}"></td>
+<td th:text="${employee.department}"></td>
+<td th:text="${employee.position}"></td>
+<td th:text="${employee.email_address}"></td>
+<td th:text="${employee.contact_number}"></td>
+<!-- <td th:text="${employee.picture}">Picture </td>  -->
+</tr>
+</table>
+
+
+<script type="text/javascript" th:src="@{/navbar.js}"></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Update employee</title>
+<style type="text/css">
+
+form{
+width:500px;
+margin-top: 50px;
+margin-left:auto;
+margin-right:auto;
+border: 2px solid black;
+font-size: 20px;
+font-weight: bolder;
+}
+
+input{
+border-radius: 5px;
+padding: 5px;
+}
+
+.btn{
+padding: 12px;
+border-radius: 5px;
+margin-top: 20px;
+margin-bottom: 20px;
+}
+</style>
+</head>
+<body>
+ <div id="navbar"></div>
+        <form th:object="${employee}" method="GET" th:action="@{/editEmp}">
+        <h1 style="text-decoration: underline">Enter the new details</h1>
+            <table>
+            	<tr>
+                    <td>Employee ID </td>
+                    <td><input type="number" name="id" required="required" value="${id}" placeholder="Enter the Employee ID"/></td>
+                </tr>
+            	
+                <tr>
+                    <td>First Name : </td>
+                    <td><input type="text" name="first_name" required="required" placeholder="Enter the first name"/></td>
+                </tr>
+                <tr>
+                    <td>Last Name : </td>
+                    <td><input type="text" name="last_name" required="required" placeholder="Enter the last name"/></td>
+                </tr>
+                <tr>
+                    <td>Salary : </td>
+                    <td><input type="number" name="salary" required="required" placeholder="Enter salary"/></td>
+                </tr>
+                <tr>
+                    <td>Department : </td>
+                    <td><input type="text" name="department" required="required" placeholder="Enter the department"/></td>
+                </tr>
+                <tr>
+                    <td>Position : </td>
+                    <td><input type="text" name="position" required="required" placeholder="Enter the position"/></td>
+                </tr>
+                <tr>
+                    <td>Email-address : </td>
+                    <td><input type="text" name="email_address" required="required" placeholder="Enter email ID"/></td>
+                </tr>
+                <tr>
+                    <td>Contact-Number : </td>
+                    <td><input type="number" name="contact_number" required="required" placeholder="Contact number"/></td>
+                </tr>
+               <tr>
+                    <td>Upload your photo : </td>
+                    <td><input type="file" name="picture" required="required" /></td>
+                </tr>
+                  <tr>
+                    <td></td>
+                    <td>
+                        <button class="btn">Update</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+       
+<script type="text/javascript" th:src="@{/navbar.js}"></script>
+</body>
+</html>
